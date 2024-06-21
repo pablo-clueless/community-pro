@@ -1,0 +1,77 @@
+@use "@/styles/base/utils" as *;
+
+.Appbar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 0;
+	background: transparent;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 20 !important;
+
+	&--true {
+		background: var(--secondary);
+	}
+
+	.AppbarContent {
+		width: 100%;
+		max-width: 1200px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.AppbarLinks {
+			align-items: center;
+			gap: 16px;
+
+			a {
+				font-size: 14px;
+				text-transform: capitalize;
+				transition: color 150ms ease-in-out;
+				position: relative;
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 0;
+					height: 1px;
+					border-radius: 4px;
+					background: var(--primary-100);
+					transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+					-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+					-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				}
+
+				&:hover {
+					color: var(--primary-100);
+				}
+
+				@media (hover: hover) and (pointer: fine) {
+					&:hover::before {
+						width: 100%;
+						left: 0;
+						right: auto;
+					}
+				}
+			}
+		}
+
+		.AppbarIcon {
+			padding: 6px;
+
+			svg {
+				color: var(--soft-white);
+				transition: color 150ms ease-in-out;
+
+				&:hover {
+					color: var(--primary-100);
+				}
+			}
+		}
+	}
+}

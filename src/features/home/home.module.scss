@@ -1,0 +1,91 @@
+@use "@/styles/base/utils" as *;
+
+.Home {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.HomeHeader {
+		width: 100%;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		gap: 80px;
+
+		@include media("sm", "max") {
+			height: 60vh;
+			gap: 40px;
+		}
+
+		.HomeHeaderContent {
+			width: 100%;
+			max-width: 1200px;
+			align-items: center;
+			justify-content: center;
+			gap: 28px;
+
+			.HomeHeading {
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+			}
+		}
+
+		.Cards {
+			align-items: center;
+			justify-content: center;
+			gap: 36px;
+		}
+	}
+
+	.HomeContainer {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.HomeContent {
+		width: 100%;
+		max-width: 1200px;
+		padding: 40px 0;
+
+		.Note {
+			width: 100%;
+			align-items: center;
+			color: var(--text-black);
+			gap: 40px;
+
+			&:nth-child(even) {
+				flex-direction: row-reverse;
+			}
+
+			.NoteImage,
+			.NoteText {
+				width: 50%;
+			}
+
+			.NoteImage {
+				aspect-ratio: 3/2;
+				position: relative;
+
+				img {
+					object-fit: cover;
+				}
+			}
+		}
+
+		@include media("sm", "max") {
+			padding: 20px 0;
+		}
+	}
+
+	.HomeNotif {
+		height: 75vh;
+		background: center/cover no-repeat url("../../../public/assets/community-3.webp");
+		background-color: var(--soft-white);
+		color: var(--soft-white);
+		mix-blend-mode: difference;
+	}
+}

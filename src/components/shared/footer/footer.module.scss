@@ -1,0 +1,102 @@
+@use "@/styles/base/utils" as *;
+
+.Footer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--soft-black);
+
+	.FooterContainer {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-white);
+		padding: 20px 0;
+
+		.FooterContent {
+			width: 100%;
+			max-width: 1200px;
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+
+			@include media("sm", "max") {
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+			}
+
+			.FooterImage {
+				width: 100%;
+
+				@include media("sm", "max") {
+					width: 100%;
+				}
+
+				.Image {
+					width: 150px;
+					height: 150px;
+					aspect-ratio: 1/1;
+					position: relative;
+
+					@include media("sm", "max") {
+						width: 75px;
+						height: 75px;
+					}
+				}
+			}
+
+			.FooterLinks {
+				grid-column: span 2 / span 2;
+				width: 100%;
+
+				.Links {
+					width: 100%;
+					gap: 10px;
+
+					.LinkLabel {
+						font-size: 10px;
+						font-weight: 600;
+						color: var(--text-gray-light);
+						text-transform: uppercase;
+					}
+
+					.LinkHref {
+						width: fit-content;
+						transition: color 300ms ease-in-out;
+
+						&:hover {
+							color: var(--primary-200);
+						}
+					}
+				}
+
+				@include media("sm", "max") {
+					width: 100%;
+				}
+			}
+
+			.FooterNews {
+				width: 100%;
+
+				@include media("sm", "max") {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.FooterNote {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-white);
+		padding: 16px;
+
+		.FooterNoteContent {
+			width: 100%;
+			max-width: 1200px;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
