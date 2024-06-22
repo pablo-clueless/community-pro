@@ -4,10 +4,9 @@ import React from "react"
 
 import { FooterLinks, SocialLinks } from "./data"
 import styles from "./footer.module.scss"
+import Logo from "@/assets/logo.png"
 import { Flex } from "../flex"
 import { Text } from "../text"
-
-const Logo = "/assets/logo.webp"
 
 export const Footer = () => {
 	return (
