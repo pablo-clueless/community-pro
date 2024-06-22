@@ -18,9 +18,9 @@ export const FooterLinks = [
 	{
 		label: "teams",
 		links: [
-			{ href: "/front-end", name: "frontend" },
-			{ href: "/back-end", name: "backend" },
-			{ href: "/design", name: "design" },
+			{ href: "/teams/front-end", name: "frontend" },
+			{ href: "/teams/back-end", name: "backend" },
+			{ href: "/teams/design", name: "design" },
 		],
 	},
 	{
