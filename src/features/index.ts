@@ -1,4 +1,5 @@
 export * from "./about"
+export * from "./blog"
 export * from "./home"
-export * from "./resources"
-export * from "./sponsors"
+export * from "./projects"
+export * from "./testimonials"

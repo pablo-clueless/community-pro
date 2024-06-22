@@ -28,7 +28,7 @@ export interface TypographyProps extends NativeElementProps<HeadingElements> {
 	 * The font weight of the text.
 	 * @default 400
 	 */
-	weight?: 400 | 500 | 600 | 700 | 800
+	weight?: 300 | 400 | 500 | 600 | 700 | 800
 	/**
 	 * The font size of the text.
 	 * @default ''

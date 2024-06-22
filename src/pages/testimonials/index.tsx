@@ -1,9 +1,9 @@
 import React from "react"
 
-import { Sponsors } from "../../features"
+import { Testimonials } from "../../features"
 
 const Page = () => {
-	return <Sponsors />
+	return <Testimonials />
 }
 
 export default Page

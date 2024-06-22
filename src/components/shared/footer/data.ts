@@ -1,23 +1,43 @@
+import {
+	DiscordLogo,
+	GithubLogo,
+	LinkedinLogo,
+	TwitterLogo,
+	WhatsappLogo,
+} from "@phosphor-icons/react"
+
+export const SocialLinks = [
+	{ href: "https://x.com/communitypro47", icon: TwitterLogo },
+	{ href: "https://www.linkedin.com/company/communitypro/", icon: LinkedinLogo },
+	{ href: "https://discord.gg/kn5sG8hqqc", icon: DiscordLogo },
+	{ href: "https://github.com/Communitypro", icon: GithubLogo },
+	{ href: "https://chat.whatsapp.com/BMFVTksMg269GdgsviJzLm", icon: WhatsappLogo },
+]
+
 export const FooterLinks = [
 	{
-		label: "community pro",
+		label: "teams",
 		links: [
-			{ href: "/about", name: "About", external: false },
-			{ href: "/resources", name: "Resources", external: false },
-			{ href: "/sponsors", name: "Sponsors", external: false },
+			{ href: "/front-end", name: "frontend" },
+			{ href: "/back-end", name: "backend" },
+			{ href: "/design", name: "design" },
 		],
 	},
 	{
-		label: "contact",
+		label: "quick links",
 		links: [
-			{ href: "https://discord.gg/kn5sG8hqqc", name: "Discord", external: true },
-			{ href: "https://github.com/Communitypro", name: "Github", external: true },
-			{ href: "https://x.com/communitypro47", name: "X (Twitter)", external: true },
-			{
-				href: "https://chat.whatsapp.com/BMFVTksMg269GdgsviJzLm",
-				name: "WhatsApp",
-				external: true,
-			},
+			{ href: "/about", name: "about" },
+			{ href: "/projects", name: "projects" },
+			{ href: "/testimonials", name: "testimonials" },
+			{ href: "/blog", name: "blog" },
+		],
+	},
+	{
+		label: "resources",
+		links: [
+			{ href: "/faqs", name: "FAQs" },
+			{ href: "/privacy", name: "privacy policy" },
+			{ href: "/terms", name: "terms & conditions" },
 		],
 	},
 ]

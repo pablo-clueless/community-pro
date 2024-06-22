@@ -9,10 +9,10 @@
 
 	.HomeHeader {
 		width: 100%;
+		max-width: 1200px;
 		height: 100vh;
 		align-items: center;
 		justify-content: center;
-		gap: 80px;
 
 		@include media("sm", "max") {
 			height: 60vh;
@@ -20,23 +20,25 @@
 		}
 
 		.HomeHeaderContent {
-			width: 100%;
-			max-width: 1200px;
-			align-items: center;
+			width: 50%;
+			height: 100%;
 			justify-content: center;
-			gap: 28px;
+			gap: 12px;
 
-			.HomeHeading {
+			&:nth-child(2) {
 				align-items: center;
-				justify-content: center;
-				gap: 12px;
+				justify-content: end;
+				padding: 0 32px 0 0;
 			}
-		}
 
-		.Cards {
-			align-items: center;
-			justify-content: center;
-			gap: 36px;
+			.HeroImage {
+				width: 378px;
+				height: 378px;
+				aspect-ratio: 1/1;
+				background: var(--primary-100);
+				border-radius: 50%;
+				position: relative;
+			}
 		}
 	}
 
@@ -44,48 +46,32 @@
 		width: 100%;
 		align-items: center;
 		justify-content: center;
-	}
 
-	.HomeContent {
-		width: 100%;
-		max-width: 1200px;
-		padding: 40px 0;
+		&--1 {
+			background: center/cover no-repeat url("../../../public/assets/images/flat-map.webp");
+			background-color: #191919;
+		}
 
-		.Note {
+		&--2 {
+			background: #212121;
+		}
+
+		&--3 {
+			background: #191919;
+		}
+
+		&--4 {
+			background: var(--primary-100);
+			color: var(--secondary);
+		}
+
+		.Content {
 			width: 100%;
+			max-width: 1200px;
 			align-items: center;
-			color: var(--text-black);
-			gap: 40px;
-
-			&:nth-child(even) {
-				flex-direction: row-reverse;
-			}
-
-			.NoteImage,
-			.NoteText {
-				width: 50%;
-			}
-
-			.NoteImage {
-				aspect-ratio: 3/2;
-				position: relative;
-
-				img {
-					object-fit: cover;
-				}
-			}
+			justify-content: center;
+			text-align: center;
+			padding: 100px 0;
 		}
-
-		@include media("sm", "max") {
-			padding: 20px 0;
-		}
-	}
-
-	.HomeNotif {
-		height: 75vh;
-		background: center/cover no-repeat url("../../../public/assets/community-3.webp");
-		background-color: var(--soft-white);
-		color: var(--soft-white);
-		mix-blend-mode: difference;
 	}
 }

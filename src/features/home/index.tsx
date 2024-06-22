@@ -1,19 +1,20 @@
 import { useQuery } from "@tanstack/react-query"
 import classNames from "classnames"
-import Image from "next/image"
+// import Image from "next/image"
 import React from "react"
 
 import { Appbar, Flex, Footer, Heading, Seo, Text } from "@/components/shared"
+import { Card, Faq, Numbers, Project } from "./components"
+import { OurLanguages, SocialLinks } from "./data"
 import { Button } from "@/components/ui/button"
 import { GetGithubUser } from "./query"
 import styles from "./home.module.scss"
-import { useCountUp } from "@/hooks"
-import { Notes } from "./data"
 
 export const Home = () => {
 	const { data } = useQuery({
 		queryFn: () => GetGithubUser("Communitypro"),
 		queryKey: ["get-github-user"],
+		enabled: false,
 	})
 
 	return (
@@ -21,61 +22,117 @@ export const Home = () => {
 			<Seo title="Join CommunityPro" />
 			<Appbar />
 			<main className={styles.Home}>
-				<Flex.Column className={styles.HomeHeader}>
+				<Flex className={styles.HomeHeader}>
 					<Flex.Column className={styles.HomeHeaderContent}>
-						<Flex.Column className={styles.HomeHeading}>
-							<Heading.h1 fontSize="52px">Join CommunityPro</Heading.h1>
-							<Text>
-								A community of developers learning by teaching and building open source projects
-							</Text>
-						</Flex.Column>
+						<Heading.h2>Connect with fellow developers</Heading.h2>
+						<Text.p>
+							CommunityPro which stands for "Community Project", is a community of developers
+							combining ideas to build open source projects and solutions. We believe developers
+							learn more by teaching and building, which is the heart of this community and the
+							reason we exist; to enhance the abilities of developers through teaching other
+							developers and building open source projects with the knowledge.
+						</Text.p>
 						<a href="https://bit.ly/join-communitypro" target="_blank">
-							<Button className="w-[200px] text-lg" size="lg">
-								Join
-							</Button>
+							<Button size="lg">Join</Button>
 						</a>
-					</Flex.Column>
-					<Flex className={styles.Cards}>
-						<Flex.Column alignItems="center">
-							<Text fontSize="24px">Followers</Text>
-							<Heading.h1>{useCountUp(data?.followers)}</Heading.h1>
-						</Flex.Column>
-						<Flex.Column alignItems="center">
-							<Text fontSize="24px">Repos</Text>
-							<Heading.h1>{useCountUp(data?.public_repos)}</Heading.h1>
-						</Flex.Column>
-					</Flex>
-				</Flex.Column>
-				<Flex.Column background="var(--primary-200)" className={styles.HomeContainer}>
-					<Flex.Column gap={100} className={styles.HomeContent}>
-						{Notes.map((note, index) => (
-							<Flex key={index} className={styles.Note}>
-								<Flex className={styles.NoteImage}>
-									<Image src={note.image} alt={note.label} fill sizes="(max-width:1024px)100%" />
-								</Flex>
-								<Flex.Column gap={8} className={styles.NoteText}>
-									<Text size="xs" casing="uppercase">
-										{note.label}
-									</Text>
-									<Heading.h4 fontSize="36px">{note.title}</Heading.h4>
-									<Text>{note.description}</Text>
-								</Flex.Column>
+						<Flex.Column gap={8} css={{ marginTop: "28px" }}>
+							<Text.p size="sm">Follow us on our social media handles</Text.p>
+							<Flex gap={12}>
+								{SocialLinks.map((link) => (
+									<a key={link.href} href={link.href} target="_blank">
+										<link.icon size={24} weight="fill" />
+									</a>
+								))}
 							</Flex>
-						))}
+						</Flex.Column>
 					</Flex.Column>
-				</Flex.Column>
-				<Flex.Column className={classNames([styles.HomeContainer, styles.HomeNotif])}>
-					<Flex.Column alignItems="center" gap={60} className={styles.HomeContent}>
-						<Heading.h4 fontSize="52px" weight={500}>
-							Join us to be a part of a wonderful journey!
-						</Heading.h4>
-						<a href="https://bit.ly/join-communitypro" target="_blank">
-							<Button size="lg" className="w-[250px] text-xl">
-								Start your journey
-							</Button>
-						</a>
+					<Flex className={styles.HomeHeaderContent}>
+						<Flex className={styles.HeroImage}></Flex>
+					</Flex>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--1`]])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								our achievements
+							</Text.p>
+							<Heading.h4>You can contribute by being a part of our community</Heading.h4>
+						</Flex.Column>
+						<Flex justifyContent="space-between" className="w-[60%]">
+							<Numbers color="#cc444b" count={data?.followers} title="Followers" />
+							<Numbers color="#7b61ff" count={data?.public_repos} title="Public Repos" />
+							<Numbers color="#7aa9ef" count={data?.public_gists} title="Gists" />
+						</Flex>
 					</Flex.Column>
-				</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--2`]])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								join us now
+							</Text.p>
+							<Heading.h4>Our contributors around the world</Heading.h4>
+						</Flex.Column>
+						<Flex className="h-[606px] w-full bg-round-map"></Flex>
+					</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								our programming languages
+							</Text.p>
+							<Heading.h4>You can contribute by being a part of our community</Heading.h4>
+						</Flex.Column>
+						<div className="grid grid-cols-3 gap-10">
+							{OurLanguages.map((lang, id) => (
+								<Card key={id} {...lang} />
+							))}
+						</div>
+					</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--3`]])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								our projects
+							</Text.p>
+							<Heading.h4>Showcasing what we have built together</Heading.h4>
+						</Flex.Column>
+						<Project />
+					</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--2`]])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								testimonial
+							</Text.p>
+							<Heading.h4>Hear what our members have to say</Heading.h4>
+						</Flex.Column>
+					</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								the team
+							</Text.p>
+							<Heading.h4>Meet our top moderators</Heading.h4>
+						</Flex.Column>
+					</Flex.Column>
+				</Flex>
+				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--4`]])}>
+					<Flex.Column gap={50} className={styles.Content}>
+						<Flex.Column alignItems="center" gap={20} css={{ width: "50%" }}>
+							<Text.p casing="uppercase" size="sm">
+								faqs
+							</Text.p>
+							<Heading.h4>We are always willing to help you</Heading.h4>
+						</Flex.Column>
+						<Faq />
+					</Flex.Column>
+				</Flex>
 			</main>
 			<Footer />
 		</>

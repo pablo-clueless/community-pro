@@ -1,41 +1,53 @@
-import { StaticImageData } from "next/image"
+import { DiscordLogo, GithubLogo, LinkedinLogo, TwitterLogo } from "@phosphor-icons/react"
 
-const image = "/assets/community-2.webp"
+export const SocialLinks = [
+	{ href: "https://x.com/communitypro47", icon: TwitterLogo },
+	{ href: "https://www.linkedin.com/company/communitypro/", icon: LinkedinLogo },
+	{ href: "https://discord.gg/kn5sG8hqqc", icon: DiscordLogo },
+	{ href: "https://github.com/Communitypro", icon: GithubLogo },
+]
 
-type NoteProps = {
-	description: string
-	image: string | StaticImageData
-	label: string
-	title: string
-}
-
-export const Notes: NoteProps[] = [
+export const OurLanguages = [
 	{
-		label: "Learn",
-		title: "Build Open Source Projects",
+		name: "JavaScript",
+		image: "/assets/images/javascript.webp",
 		description:
-			"CommunityPro goes beyond theory and textbook examples. We combine forces to create real-world open-source projects. This hands-on approach solidifies your development skills by applying them to practical problems.  While building these projects, you'll also contribute valuable code to the developer ecosystem, making a lasting impact.",
-		image: image,
+			"JavaScript is a high-level, interpreted programming language that can be used for both client-side (web) and server-side development. It's known for its versatility and ease of learning, making it a popular choice for web applications, interactive web pages, and game development.",
+		url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
 	},
 	{
-		label: "Teach",
-		title: "Share Your Knowledge, Grow Together",
+		name: "TypeScript",
+		image: "/assets/images/typescript.webp",
 		description:
-			"In CommunityPro, learning is a two-way street. Share your expertise with fellow developers, helping them overcome challenges and expand their skillsets.  This act of teaching not only benefits others but also reinforces your own understanding of the concepts.  At the same time, gain valuable insights from the experiences and knowledge of other developers in the community. We all rise together as we share and learn from each other.",
-		image: image,
+			"TypeScript is a superset of JavaScript that adds optional static typing to the language. This improves code readability, maintainability, and helps catch errors early in the development process. TypeScript compiles to plain JavaScript, allowing it to run in any JavaScript environment.",
+		url: "https://www.typescriptlang.org/",
 	},
 	{
-		label: "Impact",
-		title: "Build the Future, One Line of Code at a Time",
+		name: "Python",
+		image: "/assets/images/python.webp",
 		description:
-			"Contribute to the open-source community by collaborating on projects used by countless developers around the world.  These projects form the building blocks of the future web and technologies we use every day.  At CommunityPro, you'll have the opportunity to make a real difference with your skills.  The open-source projects you help build can be used by developers for years to come.",
-		image: image,
+			"Python is a general-purpose, high-level programming language known for its readability and beginner-friendliness. It's widely used in various fields like web development, data science, machine learning, and automation scripting.",
+		url: "https://www.python.org/",
 	},
 	{
-		label: "Support",
-		title: "Network and Grow Your Skills",
+		name: "C#",
+		image: "/assets/images/c-sharp.webp",
 		description:
-			"CommunityPro isn't just about code. Connect with like-minded developers from all backgrounds and experience levels. Share ideas, discuss challenges, and learn from each other's approaches. This supportive network can provide valuable guidance and mentorship as you progress in your developer journey. The connections you build at CommunityPro can open doors to new opportunities and collaborations, propelling your career forward.",
-		image: image,
+			"C# is a general-purpose, object-oriented programming language developed by Microsoft. It's a popular choice for building Windows applications, web services, and game development with the Unity engine. C# is known for its strong typing, performance, and rich ecosystem of libraries.",
+		url: "https://docs.microsoft.com/en-us/dotnet/csharp/",
+	},
+	{
+		name: "Golang",
+		image: "/assets/images/golang.webp",
+		description:
+			"Golang (Go) is a statically typed, compiled programming language developed by Google. It's known for its simplicity, speed, concurrency features, and focus on building efficient and scalable systems. Go is a popular choice for building web services, cloud applications, and command-line tools.",
+		url: "https://golang.org/",
+	},
+	{
+		name: "Java",
+		image: "/assets/images/java.webp",
+		description:
+			"Java is a general-purpose, object-oriented programming language known for its platform independence (write once, run anywhere). It's widely used for enterprise applications, web development (with frameworks like Spring), Android app development, and big data processing.",
+		url: "https://www.java.com/",
 	},
 ]

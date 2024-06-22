@@ -1,9 +1,9 @@
 import React from "react"
 
-import { Resources } from "../../features"
+import { Projects } from "../../features"
 
 const Page = () => {
-	return <Resources />
+	return <Projects />
 }
 
 export default Page

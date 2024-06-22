@@ -23,9 +23,14 @@
 		align-items: center;
 		justify-content: space-between;
 
+		.AppbarButtons {
+			align-items: center;
+			gap: 40px;
+		}
+
 		.AppbarLinks {
 			align-items: center;
-			gap: 16px;
+			gap: 24px;
 
 			a {
 				font-size: 14px;
