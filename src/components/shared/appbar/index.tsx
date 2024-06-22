@@ -8,9 +8,9 @@ import React from "react"
 import { useGlobalStore } from "@/store/z-store/global"
 import { Button } from "@/components/ui/button"
 import styles from "./appbar.module.scss"
+import Logo from "@/assets/logo.png"
 import { Flex } from "../flex"
 
-const Logo = "/assets/logo.webp"
 const Links = [
 	{ href: "/about", name: "about" },
 	{ href: "/projects", name: "projects" },
