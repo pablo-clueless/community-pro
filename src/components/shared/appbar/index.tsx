@@ -1,4 +1,5 @@
 import { Moon, Sun } from "@phosphor-icons/react"
+import { useRouter } from "next/router"
 import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,15 +12,16 @@ import { Flex } from "../flex"
 
 const Logo = "/assets/logo.webp"
 const Links = [
-	{ herf: "/about", name: "about" },
-	{ herf: "/projects", name: "projects" },
-	{ herf: "/testimonials", name: "testimonials" },
-	{ herf: "/blog", name: "blog" },
+	{ href: "/about", name: "about" },
+	{ href: "/projects", name: "projects" },
+	{ href: "/testimonials", name: "testimonials" },
+	{ href: "/blog", name: "blog" },
 ]
 
 export const Appbar = () => {
 	const [scrolled, setScrolled] = React.useState(false)
 	const { mode, setMode } = useGlobalStore()
+	const router = useRouter()
 
 	const toggleMode = () => {
 		if (mode === "dark") {
@@ -30,6 +32,7 @@ export const Appbar = () => {
 	}
 
 	const handleScroll = () => setScrolled(window.scrollY > 100)
+	const isOnPath = (href: string) => (router.pathname === href ? "active" : "")
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll)
@@ -44,7 +47,13 @@ export const Appbar = () => {
 				</Link>
 				<Flex className={styles.AppbarLinks}>
 					{Links.map((link, index) => (
-						<Link key={index} href={link.herf}>
+						<Link
+							key={index}
+							href={link.href}
+							className={classNames([
+								styles.AppbarLink,
+								styles[`AppbarLink--${isOnPath(link.href)}`],
+							])}>
 							{link.name}
 						</Link>
 					))}
