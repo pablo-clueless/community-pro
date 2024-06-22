@@ -15,7 +15,7 @@ export const useCountUp = (target?: number) => {
 		}, 10)
 
 		return () => clearInterval(intervalId)
-	}, [target])
+	}, [count, target])
 
 	return count
 }

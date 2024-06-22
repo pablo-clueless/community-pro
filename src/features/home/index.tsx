@@ -26,7 +26,7 @@ export const Home = () => {
 					<Flex.Column className={styles.HomeHeaderContent}>
 						<Heading.h2>Connect with fellow developers</Heading.h2>
 						<Text.p>
-							CommunityPro which stands for "Community Project", is a community of developers
+							CommunityPro which stands for Community Project, is a community of developers
 							combining ideas to build open source projects and solutions. We believe developers
 							learn more by teaching and building, which is the heart of this community and the
 							reason we exist; to enhance the abilities of developers through teaching other
