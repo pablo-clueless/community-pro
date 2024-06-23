@@ -1,46 +1,46 @@
-import image from "@/assets/people.png"
+import image from "@/assets/portfolio-shot.webp"
 
 export const Projects = [
 	{
 		title: "project one",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["react"],
 	},
 	{
 		title: "project two",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["html"],
 	},
 	{
 		title: "project three",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["javascript"],
 	},
 	{
 		title: "project four",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["javascript"],
 	},
 	{
 		title: "project five",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["react"],
 	},
 	{
-		title: "project five",
+		title: "project six",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["vue"],
 	},
 	{
-		title: "project five",
+		title: "project seven",
 		image: image,
-		url: "",
+		url: "https://cpro-portfolio-html.netlify.app/",
 		stack: ["typescript"],
 	},
 ]

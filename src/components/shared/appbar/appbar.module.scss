@@ -26,6 +26,17 @@
 		.AppbarButtons {
 			align-items: center;
 			gap: 40px;
+
+			button:active svg {
+				transition: transform 500ms ease-in-out;
+				animation: rotate 500ms ease-in-out;
+
+				@keyframes rotate {
+					to {
+						transform: rotate(360deg);
+					}
+				}
+			}
 		}
 
 		.AppbarLinks {

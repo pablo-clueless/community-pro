@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 import classNames from "classnames"
-// import Image from "next/image"
+import Image from "next/image"
 import React from "react"
 
 import { Appbar, Flex, Footer, Heading, Seo, Text } from "@/components/shared"
-import { Card, Faq, Numbers, Project } from "./components"
-import { OurLanguages, SocialLinks } from "./data"
+import { HeroImages, OurLanguages, SocialLinks, TopModerators } from "./data"
+import { Card, Faq, Moderator, Numbers, Project } from "./components"
 import { Button } from "@/components/ui/button"
 import { GetGithubUser } from "./query"
 import styles from "./home.module.scss"
@@ -47,7 +47,21 @@ export const Home = () => {
 						</Flex.Column>
 					</Flex.Column>
 					<Flex className={styles.HomeHeaderContent}>
-						<Flex className={styles.HeroImage}></Flex>
+						<Flex className={styles.Hero}>
+							{HeroImages.map((image, id) => (
+								<Flex key={id} className={styles.HeroImage}>
+									<Flex className={styles.Image}>
+										<Image
+											src={image}
+											alt={`image-${id}`}
+											fill
+											sizes="(max-width:1024px)100%"
+											className={styles.image}
+										/>
+									</Flex>
+								</Flex>
+							))}
+						</Flex>
 					</Flex>
 				</Flex>
 				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--1`]])}>
@@ -120,6 +134,11 @@ export const Home = () => {
 							</Text.p>
 							<Heading.h4>Meet our top moderators</Heading.h4>
 						</Flex.Column>
+						<Flex gap={24}>
+							{TopModerators.map((moderator, id) => (
+								<Moderator key={id} {...moderator} />
+							))}
+						</Flex>
 					</Flex.Column>
 				</Flex>
 				<Flex className={classNames([styles.HomeContainer, styles[`HomeContainer--4`]])}>
