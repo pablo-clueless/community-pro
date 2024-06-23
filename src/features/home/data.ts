@@ -7,6 +7,13 @@ export const SocialLinks = [
 	{ href: "https://github.com/Communitypro", icon: GithubLogo },
 ]
 
+export const HeroImages = [
+	"https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	"https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	"https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	"https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+]
+
 export const OurLanguages = [
 	{
 		name: "JavaScript",
@@ -49,5 +56,52 @@ export const OurLanguages = [
 		description:
 			"Java is a general-purpose, object-oriented programming language known for its platform independence (write once, run anywhere). It's widely used for enterprise applications, web development (with frameworks like Spring), Android app development, and big data processing.",
 		url: "https://www.java.com/",
+	},
+]
+
+export const TopModerators = [
+	{
+		name: "Eke Victor",
+		image: "https://avatars.githubusercontent.com/u/62628408?v=4",
+		stack: ["html", "css", "sass", "javascript"],
+		role: "Frontend Engineer, Project Maintainer",
+		social: [
+			{ url: "https://github.com/Evavic44", icon: GithubLogo },
+			{ url: "https://linkedin.com/in/victorekeawa", icon: LinkedinLogo },
+			{ url: "https://twitter.com/victorekea", icon: TwitterLogo },
+		],
+	},
+	{
+		name: "Franklin Ohaegbulam",
+		image: "https://avatars.githubusercontent.com/u/46662771?v=4",
+		stack: ["html", "css", "javascript", "react", "figma", "adobe ps"],
+		role: "Frontend Engineer, Visual Designer, Developer Advocate",
+		social: [
+			{ url: "https://github.com/frankiefab100", icon: GithubLogo },
+			{ url: "https://linkedin.com/in/frankiefab100", icon: LinkedinLogo },
+			{ url: "https://twitter.com/frankiefab100", icon: TwitterLogo },
+		],
+	},
+	{
+		name: "Emmanuel Tanimowo",
+		image: "https://avatars.githubusercontent.com/u/68563757?v=4",
+		stack: ["python", "django", "c++", "c#"],
+		role: "Backend Developer",
+		social: [
+			{ url: "https://github.com/Mannuel25", icon: GithubLogo },
+			{ url: "https://www.linkedin.com/in/emmanuel-tanimowo-6122291aa", icon: LinkedinLogo },
+			{ url: "https://twitter.com/emma_tanimowo", icon: TwitterLogo },
+		],
+	},
+	{
+		name: "Melford Birakor",
+		image: "https://avatars.githubusercontent.com/u/67881299?v=4",
+		stack: ["html", "css", "javascript", "react"],
+		role: "Frontend Developer",
+		social: [
+			{ url: "https://github.com/Melford-D", icon: GithubLogo },
+			{ url: "https://www.linkedin.com/in/melfordbirakor", icon: LinkedinLogo },
+			{ url: "https://twitter.com/melfordbirakor", icon: TwitterLogo },
+		],
 	},
 ]
