@@ -1,7 +1,9 @@
+import classNames from "classnames"
 import React from "react"
 
 import { Appbar, Flex, Footer, Heading, Seo, Text } from "@/components/shared"
 import styles from "./style.module.scss"
+// import {} from "./data"
 
 export const Projects = () => {
 	return (
@@ -18,7 +20,7 @@ export const Projects = () => {
 						<Flex className={styles.Hero}></Flex>
 					</Flex>
 				</Flex>
-				<Flex className={styles.Container}>
+				<Flex className={classNames([styles.Container, styles[`Container--1`]])}>
 					<Flex.Column gap={50} className={styles.Content}></Flex.Column>
 				</Flex>
 			</main>
