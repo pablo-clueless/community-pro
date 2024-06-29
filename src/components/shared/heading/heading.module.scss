@@ -1,6 +1,7 @@
 @use "@/styles/base/utils" as *;
 
 .Heading {
+	width: fit-content;
 	font-size: var(--heading-font-size);
 	color: var(--heading-font-color);
 	text-align: var(--heading-text-align);

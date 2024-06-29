@@ -5,7 +5,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 16px 0;
+	padding: 28px 0;
 	background: transparent;
 	position: fixed;
 	left: 0;
@@ -45,6 +45,7 @@
 
 			.AppbarLink {
 				font-size: 14px;
+				font-weight: 600;
 				text-transform: capitalize;
 				transition: color 150ms ease-in-out;
 				position: relative;

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Testimonials } from "../../features"
+import { Testimonials } from "@/features"
 
 const Page = () => {
 	return <Testimonials />

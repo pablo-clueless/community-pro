@@ -1,0 +1,27 @@
+@use "@/styles/base/utils" as *;
+
+.Pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+
+	.PaginationButtons {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		.PaginationButton {
+			width: 32px;
+			height: 32px;
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			background: var(--secondary);
+			color: var(--text-white);
+
+			&--true {
+				background: var(--primary-100);
+			}
+		}
+	}
+}
