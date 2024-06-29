@@ -44,6 +44,10 @@
 	align-items: center;
 	justify-content: center;
 
+	&--1 {
+		background: #181818;
+	}
+
 	@include media("sm", "max") {
 		padding: 40px;
 	}

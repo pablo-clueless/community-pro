@@ -35,9 +35,7 @@ export const Members = () => {
 					<Flex.Column gap={50} className={styles.Content}>
 						<Heading.h4>Our awesome members</Heading.h4>
 						<Flex className={styles.MembersList}>
-							{data?.map((member) => (
-								<Card key={member.id} image={member.avatar_url} name={member.login} />
-							))}
+							{data?.map((user) => <Card key={user.id} user={user} />)}
 						</Flex>
 						<Pagination
 							current={page}
