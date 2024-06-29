@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Cursor } from "@phosphor-icons/react"
 import classNames from "classnames"
+import Link from "next/link"
 import React from "react"
 
 import { Appbar, Flex, Footer, Heading, Seo, Text } from "@/components/shared"
@@ -91,7 +92,9 @@ export const About = () => {
 								<Card key={user.id} image={user.avatar_url} name={user.login} />
 							))}
 						</Flex>
-						<Button>See More</Button>
+						<Link href="/teams">
+							<Button>See More</Button>
+						</Link>
 					</Flex.Column>
 				</Flex>
 			</main>

@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react"
+import classNames from "classnames"
 import React from "react"
 
 import { Button } from "@/components/ui/button"
@@ -14,25 +15,43 @@ interface Props {
 export const Pagination = ({ current, onPageChange, pageSize, total }: Props) => {
 	const totalPages = Math.ceil(total / pageSize)
 
-	const onNextPage = () => {
-		if (current > 1) {
-			onPageChange(current + 1)
-		}
-	}
-
 	const onPrevPage = () => {
-		if (current < totalPages) {
+		if (current > 1) {
 			onPageChange(current - 1)
 		}
 	}
 
+	const onNextPage = () => {
+		if (current < totalPages) {
+			onPageChange(current + 1)
+		}
+	}
+
+	const buttons = () => {
+		const numbers = []
+		for (let index = 1; index <= totalPages; index++) {
+			numbers.push(
+				<button
+					key={index}
+					className={classNames([
+						styles.PaginationButton,
+						styles[`PaginationButton--${current === index}`],
+					])}
+					onClick={() => onPageChange(index)}>
+					{index}
+				</button>
+			)
+		}
+		return numbers
+	}
+
 	return (
 		<div className={styles.Pagination}>
-			<Button size="sm" onClick={onPrevPage}>
+			<Button size="sm" onClick={onPrevPage} disabled={current <= 1}>
 				<ArrowLeft />
 			</Button>
-			<div className={styles.PaginationButtons}></div>
-			<Button size="sm" onClick={onNextPage}>
+			<div className={styles.PaginationButtons}>{buttons()}</div>
+			<Button size="sm" onClick={onNextPage} disabled={current === totalPages}>
 				<ArrowRight />
 			</Button>
 		</div>
