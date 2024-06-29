@@ -1,7 +1,9 @@
 import React from "react"
 
+import { Privacy } from "@/features"
+
 const Page = () => {
-	return <div>Page</div>
+	return <Privacy />
 }
 
 export default Page

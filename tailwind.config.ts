@@ -27,6 +27,7 @@ const config = {
 				"community-2": "url('/assets/images/community-2.webp')",
 				"community-3": "url('/assets/images/community-3.webp')",
 				"flat-map": "url('/assets/images/flat-map.webp')",
+				hands: "url('/assets/images/hands.png')",
 				"round-map": "url('/assets/images/round-map.webp')",
 			},
 			colors: {

@@ -3,16 +3,16 @@ import React from "react"
 import { Appbar, Flex, Footer, Heading, Seo, Text } from "@/components/shared"
 import styles from "./style.module.scss"
 
-export const Design = () => {
+export const Privacy = () => {
 	return (
 		<>
-			<Seo title="The Design Team" />
+			<Seo title="Privacy Policy" />
 			<Appbar />
-			<main className={styles.Design}>
+			<main className={styles.Privacy}>
 				<Flex className={styles.Header}>
 					<Flex.Column className={styles.HeaderContent}>
-						<Heading.h2>Design Team</Heading.h2>
-						<Text.p>We are a team of creators and innovators.</Text.p>
+						<Heading.h2>Privacy Policy</Heading.h2>
+						<Text.p>Your data is in safe hands.</Text.p>
 					</Flex.Column>
 					<Flex className={styles.HeaderContent}>
 						<Flex className={styles.Hero}></Flex>

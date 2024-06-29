@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { useGlobalStore } from "@/store/z-store/global"
 import { Button } from "@/components/ui/button"
 import styles from "./appbar.module.scss"
@@ -59,7 +60,12 @@ export const Appbar = () => {
 					))}
 				</Flex>
 				<Flex className={styles.AppbarButtons}>
-					<Button>Donate</Button>
+					<Dialog>
+						<DialogTrigger asChild>
+							<Button>Donate</Button>
+						</DialogTrigger>
+						<DialogContent></DialogContent>
+					</Dialog>
 					<Button size="icon" variant="ghost" onClick={toggleMode}>
 						{mode === "dark" ? <Sun size={24} /> : <Moon size={24} />}
 					</Button>
